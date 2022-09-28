@@ -1,0 +1,61 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title>
+      Marcador de Truco
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="truco">
+  <ion-label id="texto" >
+    {{pontoA}}
+  </ion-label>
+  <ion-label id="texto3">
+    {{pontoB}}
+  </ion-label>
+  <br>
+  <ion-label id="texto1">
+    Equipe
+  </ion-label>
+  <ion-label id="texto2">
+    Equipe
+  </ion-label>
+  </div>
+   <div id="teste1">
+    <div>
+      <ion-button color="none" (click)="menostres(ponto)">
+        -3  
+      </ion-button>
+      <ion-button color="none"  (click)="maistres(ponto)">
+        +3
+      </ion-button>
+      <ion-button id="teste" color="none" (click)="menostresB(ponto)">
+        -3  
+      </ion-button>
+      <ion-button color="none" (click)="maistresB(ponto)">
+        +3
+      </ion-button>
+    </div>
+   <ion-button color="none" (click)="menosum(ponto)">
+      -1 
+    </ion-button>
+    <ion-button color="none" (click)="maisum(ponto)">
+      +1
+  </ion-button>
+   <ion-button id="teste2" color="none" (click)="menosumB(ponto)">
+     -1 
+   </ion-button>
+   <ion-button color="none" (click)="maisumB(ponto)">
+     +1
+   </ion-button>
+   </div>
+   <div>
+   <ion-button id="zeroa" color="none" (click)="zerarA()">
+    Zerar
+  </ion-button>
+  <ion-button id="zerob" color="none" (click)="zerarB()">
+    Zerar
+  </ion-button>
+  </div>
+</ion-content>
