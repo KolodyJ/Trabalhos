@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detalhar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <form [formGroup]="form_cadastrar" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label color="none" lines="none">Habilitar Edição</ion-label>
+      <ion-toggle (ionChange)="alterarEdicao()"></ion-toggle>
+    </ion-item>
+    <ion-item  color="none" lines="none">
+      <ion-label>Editar Filme</ion-label>
+    </ion-item>
+    <ion-item class="item" color="none" >
+      <ion-input disabled="{{edicao}}" placeholder="Nome"  
+      class="texto" formControlName="nome"></ion-input>
+    </ion-item>
+     <ion-item class="item" color="none" *ngIf="((errorControl.nome.touched || errorControl.nome.dirty) && errorControl.nome.errors)">
+    <span *ngIf="errorControl.nome.errors.required"> Nome é obrigatório! </span>
+    </ion-item>
+    <ion-item class="item" color="none" >
+      <ion-input disabled="{{edicao}}" placeholder="Direção" 
+      class="texto" formControlName="direcao"></ion-input>
+    </ion-item>
+    <ion-item class="item" color="none" *ngIf="((errorControl.direcao.touched || errorControl.direcao.dirty) && errorControl.direcao.errors)">
+      <span *ngIf="errorControl.direcao.errors.required"> Direção é obrigatório! </span>
+      </ion-item>
+    <ion-item class="item" color="none">
+      <ion-select disabled="{{edicao}}" placeholder="Selecione o Genero" 
+      formControlName="genero">
+        <ion-select-option value="Acao">Ação</ion-select-option>
+        <ion-select-option value="Aventura">Aventura</ion-select-option>
+        <ion-select-option value="Drama">Drama</ion-select-option>
+        <ion-select-option value="Faroeste">Faroeste</ion-select-option>
+        <ion-select-option value="Fantasia">Fantasia</ion-select-option>
+        <ion-select-option value="Ficcao">Ficção</ion-select-option>
+        <ion-select-option value="Romance">Romance</ion-select-option>
+        <ion-select-option value="Terror">Terror</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="item" color="none">
+      <ion-select disabled="{{edicao}}" placeholder="Selecione a Classificacão Indicativa" 
+       formControlName="classificacaoindi">
+        <ion-select-option value="Livre">Livre</ion-select-option>
+        <ion-select-option value="10">10</ion-select-option>
+        <ion-select-option value="12">12</ion-select-option>
+        <ion-select-option value="14">14</ion-select-option>
+        <ion-select-option value="16">16</ion-select-option>
+        <ion-select-option value="18">18</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="item" color="none" >
+      <ion-input disabled="{{edicao}}" placeholder="Duração" type="string" 
+       class="texto" formControlName="duracao"></ion-input>
+    </ion-item>
+    <ion-item class="item" color="none" *ngIf="((errorControl.duracao.touched || errorControl.duracao.dirty) && errorControl.duracao.errors)">
+      <span *ngIf="errorControl.duracao.errors.required"> Duração é obrigatória! </span>
+      </ion-item>
+    <ion-item class="item" color="none" >
+      <ion-input disabled="{{edicao}}" placeholder="Data de Lançamento" type="string" 
+       class="texto" formControlName="data_lanc"></ion-input>
+    </ion-item>
+    <ion-item class="item" color="none" *ngIf="((errorControl.data_lanc.touched || errorControl.data_lanc.dirty) && errorControl.data_lanc.errors)">
+      <span *ngIf="errorControl.data_lanc.errors.required"> Data de Lançamento é obrigatória! </span>
+      </ion-item>
+    <ion-item class="item" color="none" >
+      <ion-input disabled="{{edicao}}" placeholder="Resumo" type="string"
+       class="texto" formControlName="resumo"></ion-input>
+    </ion-item> 
+    <ion-item class="item" color="none" *ngIf="((errorControl.resumo.touched || errorControl.resumo.dirty) && errorControl.resumo.errors)">
+      <span *ngIf="errorControl.resumo.errors.required"> Resumo é obrigatório! </span>
+      </ion-item>
+    <ion-button disabled="{{edicao}}" expand="block" type="submit">Salvar</ion-button>
+  </form>
+  </ion-list>
+  <ion-button disabled="{{edicao}}" expand="block" color="danger" (click)="excluir()">Excluir</ion-button>
+</ion-content>

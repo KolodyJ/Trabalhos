@@ -1,0 +1,24 @@
+*{
+    font-family:"Impact", fantasy, sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+  }
+  
+  ion-title{
+    background-color: #00ffb3;
+    color: white;
+    font-size: 20px;
+  }
+  
+  ion-content {
+   --background: url("../Img/back5.jpg") 0 0/100% 100% no-repeat;
+    
+  }
+  
+  
+  ion-list, ion-item.item{
+    background: transparent;
+  color:white;
+    font-size: 23px;
+  }
+  
